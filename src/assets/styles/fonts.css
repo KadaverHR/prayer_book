@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: local('OpenSans-Regular'),
+    url('../fonts/OpenSans-Regular.woff') format('woff'),
+    url('../fonts/OpenSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: local('OpenSans-Bold'),
+    url('../fonts/OpenSans-Bold.woff') format('woff'),
+    url('../fonts/OpenSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: local('OpenSans-SemiBold'),
+    url('../fonts/OpenSans-SemiBold.woff') format('woff'),
+    url('../fonts/OpenSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OrelegaOne';
+  src: local('OrelegaOne-Regular'),
+    url('../fonts/OrelegaOne-Regular.woff') format('woff'),
+    url('../fonts/OrelegaOne-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: local('Philosopher'),
+    url('../fonts/Philosopher.woff') format('woff'),
+    url('../fonts/Philosopher.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: local('Philosopher-Bold'),
+    url('../fonts/Philosopher-Bold.woff') format('woff'),
+    url('../fonts/Philosopher-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'PTSans';
+  src: local('PTSans-Bold'),
+    url('../fonts/PTSans-Bold.woff') format('woff'),
+    url('../fonts/PTSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: local('PTSans-Regular'),
+    url('../fonts/PTSans-Regular.woff') format('woff'),
+    url('../fonts/PTSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'),
+    url('../fonts/Roboto.woff') format('woff'),
+    url('../fonts/Roboto.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Robotobold'),
+    url('../fonts/Robotobold.woff') format('woff'),
+    url('../fonts/Robotobold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'TimesNewRoman';
+  src: local('TimesNewRomanPSMT'),
+    url('../fonts/TimesNewRomanPSMT.woff') format('woff'),
+    url('../fonts/TimesNewRomanPSMT.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TimesNewRoman';
+  src: local('TimesNewRomanPS-BoldMT'),
+    url('../fonts/TimesNewRomanPS-BoldMT.woff') format('woff'),
+    url('../fonts/TimesNewRomanPS-BoldMT.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TimesNewRoman';
+  src: local('TimesNewRomanPS-ItalicMT'),
+    url('../fonts/TimesNewRomanPS-ItalicMT.woff') format('woff'),
+    url('../fonts/TimesNewRomanPS-ItalicMT.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TimesNewRoman';
+  src: local('TimesNewRomanPS-BoldItalicMT'),
+    url('../fonts/TimesNewRomanPS-BoldItalicMT.woff') format('woff'),
+    url('../fonts/TimesNewRomanPS-BoldItalicMT.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}
