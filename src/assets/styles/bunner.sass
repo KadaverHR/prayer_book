@@ -1,5 +1,60 @@
-.bunner
+.banner
   position: relative
-  background: url(../../assets/img/banner.jpg)
+  background: url(../../assets/img/banner2.jpg)
   width: 100%
-  height: 320px
+  max-width: 992px
+  min-height: 320px
+  background-position: top
+  background-repeat: no-repeat
+  background-size: cover
+  height: 100%
+  margin-top: -87px
+  margin-left: auto
+  margin-right: auto
+  &__title
+    color: #9B2828
+    font-family: $Or
+    font-size: 39px
+    font-weight: 400
+    line-height: 30px
+  &__date
+    color: #676E75
+    font-family: $Ph
+    font-size: 21px
+    font-weight: 400
+    line-height: 30px
+    letter-spacing: -0.63px
+  &__btn
+    padding: 12px 55px
+    border-radius: 20px
+    background: #9B2828
+    box-shadow: 0px 1px 4px #D1DAE0
+    color: #FFF
+    text-align: center
+    font-family: $Pt
+    font-size: 16px
+    font-weight: 700
+    line-height: normal
+    letter-spacing: -0.48px
+    text-transform: uppercase
+    position: relative
+    top: 70px
+  &__box
+    padding-top: 115px
+    display: grid
+    gap: 5px
+    justify-content: start
+    justify-items: start
+    padding-left: 25px
+
+  &__block
+    padding: 30px 0
+    &.first
+      padding-top: 65px
+    &:last-of-type
+      padding-bottom: 60px
+
+.is-main
+  .header
+    position: relative
+    z-index: 2

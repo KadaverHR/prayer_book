@@ -1,13 +1,24 @@
 *
   box-sizing: border-box
 
-$OS: 'Open Sans', sans-serif
-
+$OS: 'OpenSans', sans-serif
+$Or: 'OrelegaOne', sans-serif
+$Ph: 'Philosopher', sans-serif
+$Pt: 'PTSans', sans-serif
+$anim: 0.3s ease-in-out
+$anim2: 0.25s ease-in-out
 
 .container
   display: grid
-  max-width: 890px
-  padding-left:15px
+  max-width: 920px
+  padding-left: 15px
+  padding-right: 15px
+  margin: 0 auto
+  min-width: 320px
+.container-flex
+  display: flex
+  max-width: 920px
+  padding-left: 15px
   padding-right: 15px
   margin: 0 auto
   min-width: 320px
@@ -124,40 +135,14 @@ img
           color: #000
           font-size: 14px
 .title
-  color: #3B454E
-  font-size: 44px
+  color: #9B2828
+  font-family: $Ph
+  font-size: 30px
   font-weight: 700
-  letter-spacing: -1px
-  @media all and ($table)
-    font-size: 36px
-  @media all and ($mobile)
-    font-size: 24px
-  &__count
-    color: #000
-    font-size: 17px
-    font-weight: 400
-    position: relative
-    @media all and ($mobile)
-      font-size: 15px
-
-.section-style
-  padding-top: 40px
-  padding-bottom: 40px
-  @media all and ($mobile)
-    padding-top: 30px
-    padding-bottom: 30px
-
-.title-link
-  color: #3B454E
-  font-size: 14px
-  font-weight: 400
-  text-decoration-line: underline
-  justify-self: end
-  transition: color $anim
-  &:active, &:focus, &:hover
-    color: #FF8F51
-  @media all and ($xs)
-    justify-self: start
-
-.d-block
-  display: block !important
+  line-height: 30px
+  letter-spacing: -0.9px
+  text-transform: uppercase
+  // @media all and ($table)
+  //   font-size: 36px
+  // @media all and ($mobile)
+  //   font-size: 24px
