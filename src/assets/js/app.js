@@ -43,32 +43,29 @@ $(document).ready(function () {
 
 
   new Swiper(".swiper-main-big", {
-    // loop: true,
-
     navigation: {
       nextEl: ".swiper-main-big__swiper-button-next",
       prevEl: ".swiper-main-big__swiper-button-prev",
     },
-    autoHeight: true,
-
-
     spaceBetween: 8,
-    // slidesPerView: 3,
     breakpoints: {
       0: {
         slidesPerView: 1,
-
+        grid: {
+          rows: 2,
+        },
       },
-      567: {
-        slidesPerView: 2,
-
+      576: {
+        slidesPerView: 1,
       },
-      889: {
+      768: {
         slidesPerView: 2,
-        slidesPerGroup: 2
       },
       891: {
-        slidesPerView: 3,
+        slidesPerView: 2,
+      },
+      1920: {
+        slidesPerView: 2,
       },
     },
   });
@@ -76,22 +73,33 @@ $(document).ready(function () {
 
 
 
-  ///корзина
+  new Swiper(".swiper-main-saintly", {
+    navigation: {
+      nextEl: ".swiper-main-saintly__swiper-button-next",
+      prevEl: ".swiper-main-saintly__swiper-button-prev",
+    },
+    spaceBetween: 8,
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+      },
+      576: {
+        slidesPerView:3,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      891: {
+        slidesPerView: 4,
+      },
+      1920: {
+        slidesPerView: 4,
+      },
+    },
+  });
 
-  let cardsBtns = document.querySelectorAll('.card__btn')
 
-  cardsBtns.forEach(element => {
-    element.addEventListener('click', function () {
-      console.log(element)
-      element.classList.add('active')
-      element.innerHTML = '<span class="card__btn-order">В корзинe</span>'
-      console.log(element)
-
-    });
-
-
-  })
-
+  /////
 
 
 

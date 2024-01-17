@@ -52,6 +52,7 @@
     "rangeslider.js": "^2.3.3",
     "reset-css": "^5.0.1",
     "select2": "^4.1.0-rc.0",
+    "slick-carousel": "^1.8.1",
     "swiper": "^8.2.2"
   },
   "browserslist": [
