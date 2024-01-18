@@ -101,43 +101,26 @@ $(document).ready(function () {
 
 
 
-  /////мобильное меню
-
-  var acc = document.getElementsByClassName("accordion");
-  var i;
-
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
   // Бургер
-  let burger = document.querySelector('#hamburger-menu-mob');
-  let menu = document.querySelector('#catalog-drop-mob');
-  let menuLinks = menu.querySelectorAll('.catalog-link');
-  let closeMenu = menu.querySelector('#close-mob')
+  let burger = document.querySelector('.burger');
+  let menu = document.querySelector('.header__list-mobile');
+  let menuLinks = menu.querySelectorAll('.header__link');
+
 
   burger.addEventListener('click', function () {
-    menu.classList.toggle('active');
-    document.body.classList.toggle('stop-scroll');
-  });
-
-  closeMenu.addEventListener('click', function () {
-    menu.classList.toggle('active');
+    burger.classList.toggle('burger--active');
+    menu.classList.toggle('header__list-mobile--active');
     document.body.classList.toggle('stop-scroll');
   });
 
   menuLinks.forEach(function (el) {
     el.addEventListener('click', function () {
-      menu.classList.remove('active');
+      burger.classList.remove('burger--active');
+      menu.classList.remove('header__list-mobile--active');
       document.body.classList.remove('stop-scroll')
     })
   });
 
+
+  
 })
