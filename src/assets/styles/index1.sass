@@ -1,19 +1,31 @@
 .main
   &__block
     padding: 30px 0
+    @media all and ($xs)
+      padding: 15px 0
     &.first
       padding-top: 65px
+      @media all and ($xs)
+        padding-top: 50px
     &:last-of-type
       padding-bottom: 60px
     &--color
       background: #FFFCEE
       padding-top: 45px
+      @media all and ($xs)
+        padding: 15px 0
   &__list
     display: grid
     grid-template-columns: repeat(4,1fr)
     gap: 8px
     padding-top: 22px
     padding-bottom: 8px
+    @media all and ($mobile)
+      grid-template-columns: repeat(2, auto)
+      gap: 30px 8px
+      justify-content: space-evenly
+    @media all and ($xs)
+      gap: 20px 8px
   &__item-link
     display: flex
     cursor: pointer
@@ -23,6 +35,8 @@
     &:hover, &:active, &:focus
       & .main__item-img img
         height: 220px
+        @media all and (max-width: 420px)
+          height: 130px
       & .main__item-title
         font-weight: 700
     &--big
@@ -39,10 +53,15 @@
     padding-left: 20px
     transition: font $anim2
     padding-bottom: 15px
+    @media all and ($xs)
+      font-size: 14px
+      line-height: 14px
   &__item-img
     display: flex
     max-height: 200px
     justify-content: flex-start
+    @media all and (max-width: 420px)
+      max-height: 120px
     img
       transition: height $anim
       display: flex
@@ -51,6 +70,8 @@
       border-radius: 30px 30px 40px 40px
       object-fit: cover
       object-position: top
+      @media all and (max-width: 420px)
+        height: 120px
   &__text-block-text
     width: 50%
     color: #515961
@@ -61,6 +82,10 @@
     letter-spacing: -0.54px
     position: relative
     padding-left: 40px
+    @media all and ($mobile)
+      font-size: 16px
+      width: 100%
+      padding-left: 0
   &__text-block-wrapper
     padding-bottom: 30px
   &__text-block
@@ -79,4 +104,3 @@
       transform: translate(-50%,-50%)
       background-size: cover
       z-index: 0
-

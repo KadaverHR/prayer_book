@@ -16,7 +16,7 @@ $anim2: 0.25s ease-in-out
   padding-right: 15px
   margin: 0 auto
   min-width: 320px
-  @media screen all and (max-width: 576px)
+  @media all and ($xs)
     max-width: 616px
     padding-left: 20px
     padding-right: 20px
@@ -27,7 +27,7 @@ $anim2: 0.25s ease-in-out
   padding-right: 15px
   margin: 0 auto
   min-width: 320px
-  @media screen all and (max-width: 576px)
+  @media all and ($xs)
     max-width: 616px
     padding-left: 20px
     padding-right: 20px
@@ -73,7 +73,10 @@ img
   line-height: 30px
   letter-spacing: -0.9px
   text-transform: uppercase
-  // @media all and ($table)
-  //   font-size: 36px
-  // @media all and ($mobile)
-  //   font-size: 24px
+  @media all and ($mobile)
+    font-size: 26px
+    width: 80%
+  @media all and ($xs)
+    font-size: 21px
+    
+  

@@ -12,6 +12,8 @@
     background-image: url(../../assets/img/footer.svg)
     height: 52px
     width: 100%
+    @media all and ($xs)
+      border-radius: 0
   &__nav
     height: 100%
     display: grid
@@ -23,11 +25,18 @@
     justify-items: center
     padding-left: 20px
     padding-right: 20px
+    @media all and ($xs)
+      grid-template-columns: 1fr 0.8fr 1fr
+      padding-left: 10px
+      padding-right: 10px
   &__nav-item
     &.center
       position: relative
       padding-left: 30px
       padding-right: 30px
+      @media all and ($xs)
+        padding-left: 15px
+        padding-right: 15px
       &::before
         content: ""
         position: absolute
@@ -52,17 +61,28 @@
     letter-spacing: -0.42px
     text-transform: uppercase
     text-decoration: none
+    display: flex
+    @media all and ($xs)
+      font-size: 10px
+      line-height: 10px
+      font-weight: 400
   &__bottom
     padding-left: 40px
     padding-top: 25px
     padding-bottom: 25px
     background: #FFFCEE
+    @media all and ($xs)
+      padding-left: 20px
   &__bottom-text
     color: rgba(103, 111, 115, 0.80)
     font-family: $Pt
     font-size: 11px
     font-weight: 400
     line-height: 120%
+  .container-flex
+    @media all and ($xs)
+      padding-left: 0
+      padding-right: 0
 .linear-gradient
   &__bottom
     bottom: -5px
