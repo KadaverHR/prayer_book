@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-
+  //год
+  document.getElementById("year").innerHTML = new Date().getFullYear();
   /// svg
 
   const Svg = () => {
@@ -84,7 +85,7 @@ $(document).ready(function () {
         slidesPerView: 2,
       },
       576: {
-        slidesPerView:3,
+        slidesPerView: 3,
       },
       768: {
         slidesPerView: 3,
@@ -99,59 +100,44 @@ $(document).ready(function () {
   });
 
 
-  /////
 
+  /////мобильное меню
 
+  var acc = document.getElementsByClassName("accordion");
+  var i;
 
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+  // Бургер
+  let burger = document.querySelector('#hamburger-menu-mob');
+  let menu = document.querySelector('#catalog-drop-mob');
+  let menuLinks = menu.querySelectorAll('.catalog-link');
+  let closeMenu = menu.querySelector('#close-mob')
 
-  ///////
-  $(".range-price").slider({
-    animate: "slow",
-    range: true,
-    values: [10, 1000],
-    slide: function (event, ui) {
-      $(".result-range-price > .from > input").val(ui.values[0]);
-      $(".result-range-price > .to > input").val(ui.values[1]);
-    },
-  });
-  $(".result-range-price > .from > input").val(
-    $(".range-price").slider("values", 0)
-  );
-  $(".result-range-price > .to  > input").val(
-    $(".range-price").slider("values", 1)
-  );
-
-  console.log("hty");
-
-
-
-  // Фильтр мобильная версия
-
-  let filter = $(".filter-mobile");
-  let filterNextStep = $(".filter-mobile-step-next");
-
-  $(".js-button-filter-mobile").click(function () {
-    filter.addClass("filter-mobile--active");
-    $("html").css("overflow-y", "hidden");
+  burger.addEventListener('click', function () {
+    menu.classList.toggle('active');
+    document.body.classList.toggle('stop-scroll');
   });
 
-  $(".js-filter-mobile-block__button-all").click(function () {
-    filterNextStep.toggleClass("filter-mobile-step-next--active");
+  closeMenu.addEventListener('click', function () {
+    menu.classList.toggle('active');
+    document.body.classList.toggle('stop-scroll');
   });
 
-  $(".js-filter-mobile-header-back").click(function () {
-    filterNextStep.removeClass("filter-mobile-step-next--active");
+  menuLinks.forEach(function (el) {
+    el.addEventListener('click', function () {
+      menu.classList.remove('active');
+      document.body.classList.remove('stop-scroll')
+    })
   });
 
-  $(".js-filter-mobile-close").click(function () {
-    filter.removeClass("filter-mobile--active");
-    filterNextStep.removeClass("filter-mobile-step-next--active");
-    $("html").css("overflow-y", "auto");
-  });
-
-  $(".js-catalog-select").click(function () {
-    $(".catalog-select__options").toggleClass(
-      "catalog-select__options--active"
-    );
-  });
 })

@@ -1,25 +1,57 @@
 .header
-  padding-top: 20px
-  padding-bottom: 20px
+  position: fixed
+  z-index: 99
+  position: fixed
+  top: 0
+  width: 100%
+
   &__box
+    padding-top: 20px
+    padding-bottom: 15px
     display: grid
     grid-auto-flow: column
     align-items: end
+    @media all and ($xs)
+      padding-bottom: 0
   &__nav
     display: grid
     grid-auto-flow: column
     gap: 68px
     justify-items: center
     justify-content: end
+    @media all and ($mobile)
+      gap: 20px
+    @media all and ($xs)
+      display: none
   &__nav-link
     display: grid
     gap: 8px
     justify-items: center
     cursor: pointer
     text-decoration: none
+    svg path
+      transition: fill $anim
+    &:hover, &:active, &:focus
+      svg path
+        fill: #B6BC94    
+  &__img-wrapper
+    img 
+      width: 180px
   &__nav-title
     color: #5E6B67
     text-align: center
     font-family: $OS
     font-size: 11px
     font-weight: 400
+
+.linear-gradient
+  &__top
+    bottom: 0
+    position: relative
+    z-index: 2
+    height: 65px
+    width: 100%
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.00) 16.67%, #FFF 82.2%)
+
+
+
