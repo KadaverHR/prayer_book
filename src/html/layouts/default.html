@@ -27,15 +27,16 @@
   {% include "html/includes/header.html" %}
 
 
+  <main>
+    {% block content %}{% endblock %}
 
-  {% block content %}{% endblock %}
-
+  </main>
   {% include "html/includes/footer.html" %}
 
 
   <!--<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>-->
 
- 
+
 
   <!-- <script>
     AOS.init()
@@ -44,7 +45,7 @@
     integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous">
     </script> -->
 
-<!-- 
+  <!-- 
   <script>
 
     window.addEventListener('scroll', function () {

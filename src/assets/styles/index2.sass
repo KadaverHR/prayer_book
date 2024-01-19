@@ -1,0 +1,118 @@
+.is-holidays
+  main
+    background: #FEFFF9
+.holidays
+  .main__item-img
+    max-height: 260px
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      border: 2px solid #FFF6D7
+      width: calc( 100% - 10px )
+      height: calc( 100% - 10px )
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      border-radius: 30px 30px 40px 40px
+    img
+      height: 260px
+      @media all and (max-width: 420px)
+        height: auto
+    p
+      font-weight: 600
+  .main__item-title
+    padding-bottom: 10px
+    align-self: center
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      width: 1px
+      height: 55px
+      background: #D8DCBF
+      left: 0
+      top: calc( 50% - 5px )
+      transform: translateY(-50%)
+  .main__item-link
+    gap: 10px
+    cursor: default
+    display: grid
+    align-content: stretch
+    align-items: stretch
+    grid-template-rows: 1fr auto auto
+    &:hover, &:active, &:focus
+      & .main__item-img img
+        height: 260px
+        @media all and (max-width: 420px)
+          height: auto
+      & .main__item-title
+        font-weight: 600
+  &__content-list
+    display: grid
+    grid-template-columns: repeat(auto-fill, 255px)
+    gap: 50px 30px
+    padding-left: 20px
+    justify-content: start
+    padding-top: 35px
+    align-content: stretch
+  &__content-btn
+    justify-self: center
+    padding: 1px 34px
+    border: 1px solid #D8DCBF
+    border-radius: 14px
+    color: #838769
+    font-family: $Pt
+    font-size: 14px
+    font-weight: 400
+    line-height: 30px
+    letter-spacing: -0.42px
+    text-transform: uppercase
+    transition: border $anim, background $anim, color $anim
+    &:hover, &:active, &:focus
+      border: 1px solid #9B2828
+      background: #9B2828
+      color: #FEFFF9
+  &__content-title
+    text-align: center
+    color: #7F845F
+    font-family: $Ph
+    font-size: 36px
+    font-weight: 700
+    line-height: 30px
+    letter-spacing: -1.08px
+  &__content-box
+    padding-top: 25px
+    padding-bottom: 25px
+    &:first-of-type
+      padding-top: 50px
+    &:last-of-type
+      padding-bottom: 50px
+  &__content-item-box
+    display: grid
+    grid-auto-flow: column
+    gap: 20px
+  &__content-item-date
+    color: rgba(81, 89, 97, 0.80)
+    font-family: $OS
+    font-size: 24px
+    font-weight: 400
+    line-height: 21px
+    letter-spacing: -0.72px
+    padding-top: 15px
+  &__years-box
+    padding-top: 25px
+    padding-bottom: 25px
+    display: grid
+    grid-auto-flow: column
+    gap: 30px
+    align-items: center
+    justify-content: center
+  &__years
+    color: #B4B994
+    font-family: $Ph
+    font-size: 30px
+    font-style: normal
+    font-weight: 700
+    line-height: 30px
+    letter-spacing: -0.9px
