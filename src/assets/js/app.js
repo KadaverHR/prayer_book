@@ -98,4 +98,19 @@ $(document).ready(function() {
       document.body.classList.remove('stop-scroll');
     });
   });
+
+
+
+
+  /// кнопка подробнее
+
+  let btnMore = document.querySelector('.player__btn-more')
+  let tbh = document.querySelector('.player__hidden')
+
+  btnMore.addEventListener('click', () => {
+    btnMore.classList.add('d-n')
+    tbh.classList.remove('d-n')
+  })
+
+
 });

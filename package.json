@@ -7,7 +7,7 @@
     "dev": "gulp",
     "prod": "gulp --prod"
   },
-  "author": "Nikita Kovtun",
+  "author": "Kadaver",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.0",

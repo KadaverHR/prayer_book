@@ -1,0 +1,155 @@
+.navigation
+  &__box
+    position: relative
+    z-index: 2
+  &__link
+
+    display: grid
+    grid-auto-flow: column
+    gap: 9px
+    justify-items: start
+    justify-content: start
+    align-items: center
+    text-decoration: none
+    cursor: pointer
+    p
+      color: #727877
+      font-family: $Pt
+      font-size: 12px
+      font-weight: 400
+      line-height: 30px
+      letter-spacing: -0.36px
+      text-transform: uppercase
+      cursor: pointer
+
+.player
+  .container
+    position: relative
+  &__banner
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 50%
+    top: 0
+    transform: translateX(-50%)
+    object-fit: cover
+    object-position: top
+    z-index: 0
+  .banner__box
+    position: relative
+    z-index: 2
+    padding-top: 48px
+    gap: 20px
+    max-width: 546px
+    padding-bottom: 50px
+  .banner__title
+    font-family: $Ph
+    font-size: 39px
+    font-weight: 700
+  &__text
+    color: #515961
+    font-family: $TNR
+    font-size: 18px
+    font-weight: 400
+    line-height: 24px
+    letter-spacing: -0.54px
+  &__btn-more
+    border-radius: 10px
+    border: 1px solid rgba(81, 89, 97, 0.40)
+    color: #515961
+    font-family: $Pt
+    font-size: 14px
+    font-weight: 400
+    line-height: 30px
+    letter-spacing: -0.42px
+    text-transform: uppercase
+    padding: 3px 63px
+  &__text-box
+    display: grid
+    gap: 20px
+  &__text-title
+    color: #7F845F
+    font-family: $Ph
+    font-size: 24px
+    font-weight: 400
+    line-height: 30px
+    text-transform: uppercase
+  &__list
+    display: grid
+    gap: 5px
+    justify-content: start
+  &__item-text
+    position: relative
+    display: grid
+    gap: 10px
+    grid-auto-flow: column
+    justify-items: start
+    justify-content: start
+    align-items: center
+    &::before
+      content: ""
+      display: flex
+      width: 5px
+      height: 5px
+      transform: rotate(45deg)
+      border-radius: 2px
+      background: #9B2828
+
+.texts
+  padding-bottom: 70px
+  &__box
+    padding-left: 25px
+    display: grid
+    grid-auto-flow: column
+    grid-template-columns: auto 109px
+    gap: 66px
+    padding-top: 50px
+    padding-bottom: 40px
+
+  &__img
+    text-align: center
+  &__padding
+    margin-top: 30px
+    margin-bottom: 30px
+    width: 100%
+    height: 1px
+    background: rgba(0, 0, 0, 0.20)
+  &__btn
+    color: #FFF
+    font-family: $Pt
+    font-size: 18px
+    font-weight: 700
+    letter-spacing: -0.54px
+    text-transform: uppercase
+    padding: 14px 72px
+    box-shadow: 0px 1px 4px #D1DAE0
+    background: #9B2828
+    border-radius: 25px
+    justify-self: center
+  &__btns
+    padding-top: 70px
+  &__btns-size
+    width: 109px
+    padding-top: 20px
+    padding-bottom: 18px
+    display: grid
+    gap: 11px
+    justify-items: center
+    justify-content: center
+    align-items: center
+    border: 1px solid #D8DCBF
+    &.top
+      border-radius: 10px 10px 0 0 
+    &.bottom
+      border-radius: 0 0 10px 10px 
+      position: relative
+      top: -1px
+    img
+      padding-right: 5px
+  &__btns-size-text
+    color: #5E6B67
+    font-family: $Pt
+    font-size: 11px
+    font-weight: 400
+    line-height: normal
+    text-transform: uppercase
