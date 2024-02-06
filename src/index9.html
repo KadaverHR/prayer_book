@@ -1,0 +1,73 @@
+{% set title = "Профиль" %}
+{% set bodyClass = "is-main" %}
+
+{% extends "html/layouts/default.html" %}
+
+{% block content %}
+
+<section class="profile">
+  <div class="container">
+    <h2 class="title">
+      Профиль
+    </h2>
+    <div class="profile__setting-box">
+      <div class="profile__setting-block">
+        <p class="profile__setting-title">
+          Изменение пароля
+        </p>
+        <form class="profile__form" action="">
+          <p class="profile__setting-text">
+            Dmtinyakov@yandex.ru
+          </p>
+          <input class="profile__password" type="password" required placeholder="Введите старый пароль">
+          <input class="profile__password" type="password" required placeholder="Введите новый пароль">
+        </form>
+        <button class="profile__setting-btn" form="" type="submit">
+          Изменить пароль
+        </button>
+      </div>
+      <div class="profile__setting-block">
+        <p class="profile__setting-title">
+          Уведомления
+        </p>
+        <form class="profile__form" action="">
+          <div class="profile__setting-switch">
+            <p class="switch__title">Dmtinyakov@yandex.ru</p>
+            <div class="switch__box">
+              <input class="switch" type="checkbox" id="switch1" />
+              <label class="switch__label" for="switch1">Toggle</label>
+            </div>
+          </div>
+          <div class="profile__setting-switch">
+            <p class="switch__title">PUSH-уведомления</p>
+            <div class="switch__box">
+              <input class="switch" type="checkbox" id="switch2" />
+              <label class="switch__label" for="switch2">Toggle</label>
+            </div>
+          </div>
+        </form>
+        <button class="profile__setting-btn" form="" type="submit">
+          Сохранить изменения
+        </button>
+      </div>
+    </div>
+
+    <div class="profile__hd">
+      <h2 class="title">
+        Тех.поддержка
+      </h2>
+
+      <form class="profile__form" action="">
+        <textarea class="profile__textarea" required placeholder="Заголовок вопроса"></textarea>
+        <textarea class="profile__textarea" required placeholder="Текст вопроса"></textarea>
+      </form>
+      <button class="profile__setting-btn" form="" type="submit">
+        Отправить вопрос
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}
