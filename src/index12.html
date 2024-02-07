@@ -1,0 +1,99 @@
+{% set title = "Модалки" %}
+{% set bodyClass = "modals-all" %}
+{% extends "html/layouts/default.html" %}
+{% block content %}
+
+<div class="modals__box modals-payment__box">
+
+
+  <div class="modals-payment">
+    <button class="modals__close">
+      <img src="assets/img/close2.svg">
+    </button>
+    <button class="modals__close prev">
+      <img src="assets/img/close2.svg">
+    </button>
+    <p class="modals-payment__title">
+      ОПЛАТА ЗАПИСКИ
+    </p>
+
+    <form class="modals-payment__form" action="">
+      <p class="modals-payment__title-block">
+        Ваши контактные данные
+      </p>
+      <input id="mail" class="profile__password" type="mail" placeholder="Введите email">
+      <p class="modals-payment__desc">
+        Чтобы получать уведомления о движении
+        ваших записок - введите имя и адрес эл. почты
+      </p>
+
+      <p class="modals-payment__title-block">
+        Данные карты
+      </p>
+      <input id="card" class="profile__password" type="number" placeholder="Номер карты">
+
+      <div class="modals-payment__inputs">
+        <input id="month" class="profile__password" type="number" placeholder="месяц">
+        <input id="year" class="profile__password" type="number" placeholder="год">
+        <input id="CVV" class="profile__password" type="number" placeholder="CVV">
+      </div>
+
+      <div class="checkbox__item">
+        <label for="check1">
+          <input class="checkbox__input" type="checkbox" name="check1" id="check1">
+          <span class="checkbox__custom"></span>
+          <span class="checkbox__text">
+            Я согласен на обработку персональных
+            данных и с условиями
+          </span>
+        </label>
+      </div>
+      <div class="checkbox__item">
+        <label for="check2">
+          <input class="checkbox__input" type="checkbox" name="check2" id="check1">
+          <span class="checkbox__custom"></span>
+          <span class="checkbox__text">
+            Я соглашаюсь получать рассылку
+            о новостях, праздниках и акциях
+            на свой e-mail
+          </span>
+        </label>
+      </div>
+
+    </form>
+  </div>
+  <div class="modals__btn-box">
+    <button type="submit" class="modals__btn">
+      Оплатить
+    </button>
+  </div>
+  <footer class="footer modals__footer">
+    <div>
+      <div class="container-flex">
+
+
+        <div class="footer__box">
+          <nav class="footer__nav">
+            <div class="footer__nav-item">
+              <a href="" class="footer__link">
+                МОЛИТВЫ В РАЗЛИЧНЫХ НУЖДАХ
+              </a>
+            </div>
+            <div class="footer__nav-item center">
+              <a href="" class="footer__link">
+                МОЛИТВЫ К СВЯТЫМ
+              </a>
+            </div>
+            <div class="footer__nav-item">
+              <a href="" class="footer__link">
+                МОЛИТВЫ НА КАЖдЫЙ ДЕНЬ
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+{% endblock %}

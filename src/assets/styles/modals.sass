@@ -1,0 +1,246 @@
+.modals-kid
+  background: #fff
+  border-radius: 30px 30px 40px 40px
+  display: grid
+  padding: 10px
+  grid-template-columns: 1fr auto
+  gap: 20px
+  justify-content: space-between
+  &__title-wrapper
+    display: grid
+    grid-auto-flow: column
+    justify-content: space-between
+    padding-left: 21px
+    padding-bottom: 30px
+    padding-right: 10px
+  &__title
+    font-family: $OS
+    font-size: 24px
+    font-weight: 700
+    line-height: 21px
+    letter-spacing: -0.03em
+    text-transform: uppercase
+    color: #9B2828
+
+  &__list
+    display: grid
+    gap: 11px
+    padding: 33px 41px
+  &__link
+    font-family: $OS
+    font-size: 16px
+    font-weight: 700
+    line-height: 30px
+    letter-spacing: -0.03em
+    text-transform: uppercase
+    color: #838769
+    text-decoration: none
+  &__img
+    min-width: 216px
+    border-radius: 30px 30px 40px 40px
+    height: 100%
+
+.modals-all
+  height: 100vh
+  background: rgba(79, 76, 87, 0.8)
+  position: relative
+  .header
+    display: none
+  .footer
+    display: none
+
+.modals
+  background: #fff
+  border-radius: 20px
+  display: grid
+  &__box
+    display: grid
+    justify-content: center
+    position: relative
+  &__img-box
+    position: relative
+  &__img
+    border-radius: 20px 20px 0 0
+  &__content-box
+    border-radius: 20px 20px 0 0
+    background: #fff
+    padding: 40px 90px
+    margin-top: -20px
+  &__content-title
+    font-family: $Ph
+    font-size: 24px
+    font-weight: 700
+    line-height: 27px
+    letter-spacing: -0.03em
+    color: #BF8A00
+    text-align: center
+    text-transform: uppercase
+  &__content-list
+    height: 100%
+    overflow: hidden
+    display: grid
+    justify-content: center
+    justify-items: center
+  &__content-item
+    padding: 21px 5px 6px 5px
+    position: relative
+    &::before
+      content: ""
+      width: 100%
+      height: 2px
+      background: #E1E1E1
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+  &__content-link
+    font-family: $OS
+    font-size: 18px
+    font-weight: 400
+    line-height: 25px
+    text-align: center
+    color: #515961
+    text-decoration: none
+  &__scroll
+    margin-top: 25px
+    max-height: 354px
+    overflow: auto
+    &::-webkit-scrollbar
+      width: 2px
+    &::-webkit-scrollbar-track
+      background: #E8DAAC
+    &::-webkit-scrollbar-thumb
+      background-color: #AF8A05
+      border: 1px solid #AF8A05
+  &__btn-box
+    background: #F8F5EF
+    width: 100%
+    padding: 30px
+    display: grid
+    justify-items: center
+  &__btn
+    padding: 10px 58px
+    border-radius: 18px
+    background: #9B2828
+    color: #fff
+    font-family: $Pt
+    font-size: 16px
+    font-weight: 700
+    line-height: 21px
+    text-transform: uppercase
+  &__footer
+    display: grid !important
+    position: absolute
+    bottom: -50px
+  &__close
+    position: absolute
+    right: 20px
+    top: 20px
+
+.modals-payment
+  padding: 24px 50px
+  background: #fff
+  border-radius: 20px 20px 0 0
+  position: relative
+  &__title
+    font-family: $Ph
+    font-size: 30px
+    font-weight: 400
+    line-height: 27px
+    letter-spacing: -0.03em
+    text-align: center
+    text-transform: uppercase
+    color: #9B2828
+  &__form
+    max-width: 325px
+    margin-top: 40px
+    display: grid
+    input
+      font-family: $OS
+      font-size: 18px
+      font-weight: 400
+      line-height: 25px
+      letter-spacing: 0%
+      text-align: center
+      color: #515961
+  &__title-block
+    font-family: $Ph
+    font-size: 21px
+    font-weight: 700
+    line-height: 27px
+    letter-spacing: -0.03em
+    text-align: center
+    text-transform: uppercase
+    color: #7F845F
+    padding-bottom: 15px
+  &__desc
+    font-family: $OS
+    font-size: 14px
+    font-weight: 400
+    line-height: 19px
+    text-align: center
+    color: #82898F
+    padding-top: 20px
+  &__inputs
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 20px
+    padding-top: 15px
+    padding-bottom: 25px
+    .profile__password
+      max-width: 60px
+      &:last-of-type
+        grid-column: 4/5
+  .modals__close
+    right: -60px
+    &.prev
+      left: -60px
+      right: auto
+
+
+
+.checkbox
+  &__item
+    margin-top: 25px
+  &__input
+    display: none !important
+  &__item label
+    display: grid
+    grid-auto-flow: column
+    position: relative
+    cursor: pointer
+    margin: 0
+    text-align: center
+  &__custom
+    display: block
+    position: relative
+    width: 25px
+    height: 25px
+    border: 2px solid #D8DCBF
+    text-align: center
+    margin-right: 25px
+  &__custom::before
+    content: url(/assets/img/check.svg)
+    text-align: center
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    opacity: 0
+    transition: opacity 0.3s ease-in-out
+  &__input:checked ~ .checkbox__custom
+    background: #9B2828
+    border: 2px solid #9B2828
+  &__input:checked ~ .checkbox__custom::before
+    opacity: 1
+  &__text
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+    font-family: $OS
+    font-size: 14px
+    font-weight: 400
+    line-height: 19px
+    color: #515961
+    text-align: start
