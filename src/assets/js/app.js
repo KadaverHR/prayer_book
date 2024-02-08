@@ -1,14 +1,14 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Год
   $("#year").text(new Date().getFullYear());
 
   // SVG
   const replaceSvg = () => {
-    $(".svg").each(function() {
+    $(".svg").each(function () {
       let $img = $(this);
       let imgClass = $img.attr("class");
       let imgURL = $img.attr("src");
-      $.get(imgURL, function(data) {
+      $.get(imgURL, function (data) {
         let $svg = $(data).find("svg");
         if (typeof imgClass !== "undefined") {
           $svg = $svg.attr("class", imgClass + " replaced-svg");
@@ -82,19 +82,19 @@ $(document).ready(function() {
 
   // Бургер
   let burger = document.querySelector('.burger');
-  let menu = document.querySelector('.header__list-mobile');
+  let menu = document.querySelector('.header__mobile');
   let menuLinks = menu.querySelectorAll('.header__link');
 
-  burger.addEventListener('click', function() {
+  burger.addEventListener('click', function () {
     burger.classList.toggle('burger--active');
-    menu.classList.toggle('header__list-mobile--active');
+    menu.classList.toggle('header__mobile--active');
     document.body.classList.toggle('stop-scroll');
   });
 
-  menuLinks.forEach(function(el) {
-    el.addEventListener('click', function() {
+  menuLinks.forEach(function (el) {
+    el.addEventListener('click', function () {
       burger.classList.remove('burger--active');
-      menu.classList.remove('header__list-mobile--active');
+      menu.classList.remove('header__mobile--active');
       document.body.classList.remove('stop-scroll');
     });
   });
@@ -113,4 +113,6 @@ $(document).ready(function() {
   })
 
 
+
+  
 });
