@@ -2,8 +2,9 @@
   &__box
     position: relative
     z-index: 2
+    @media all and ($xs)
+      display: none
   &__link
-
     display: grid
     grid-auto-flow: column
     gap: 9px
@@ -35,6 +36,10 @@
     object-fit: cover
     object-position: top
     z-index: 0
+    @media all and ($xs)
+      max-height: 180px
+      object-position: center 10%
+      top: -18px
   .banner__box
     position: relative
     z-index: 2
@@ -42,10 +47,19 @@
     gap: 20px
     max-width: 546px
     padding-bottom: 50px
+    @media all and ($xs)
+      padding-top: 45px
+      padding-bottom: 0
+    @media all and ($xs)
+      max-width: 100%
+      justify-content: stretch
   .banner__title
     font-family: $Ph
     font-size: 39px
     font-weight: 700
+    @media all and ($xs)
+      font-size: 21px
+      line-height: 21px
   &__text
     color: #515961
     font-family: $TNR
@@ -64,9 +78,16 @@
     letter-spacing: -0.42px
     text-transform: uppercase
     padding: 3px 63px
+    background: #fff
+    @media all and ($xs)
+      width: 100%
   &__text-box
     display: grid
     gap: 20px
+    @media all and ($mobile)
+      width: 50%
+    @media all and ($xs)
+      display: none
   &__text-title
     color: #7F845F
     font-family: $Ph
@@ -97,6 +118,10 @@
 
 .texts
   padding-bottom: 70px
+  @media all and ($xs)
+    padding-top: 10px !important
+  .header__mobile-btn
+    margin-top: 10px
   &__box
     padding-left: 25px
     display: grid
@@ -105,7 +130,13 @@
     gap: 66px
     padding-top: 50px
     padding-bottom: 40px
-
+    @media all and ($xs)
+      grid-template-columns: 1fr
+      padding-top: 20px
+      padding-bottom: 20px
+      padding-left: 0
+      grid-auto-flow: row
+      gap: 20px
   &__img
     text-align: center
   &__padding
@@ -128,6 +159,8 @@
     justify-self: center
   &__btns
     padding-top: 70px
+    @media all and ($xs)
+      display: none
   &__btns-size
     width: 109px
     padding-top: 20px
@@ -139,9 +172,9 @@
     align-items: center
     border: 1px solid #D8DCBF
     &.top
-      border-radius: 10px 10px 0 0 
+      border-radius: 10px 10px 0 0
     &.bottom
-      border-radius: 0 0 10px 10px 
+      border-radius: 0 0 10px 10px
       position: relative
       top: -1px
     img

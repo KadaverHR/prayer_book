@@ -1,6 +1,8 @@
 .is-holidays
   main
     background: #FEFFF9
+  .header__mobile-btn
+    margin-top: 20px
 .holidays
   .main__item-img
     max-height: 260px
@@ -81,11 +83,15 @@
     font-weight: 700
     line-height: 30px
     letter-spacing: -1.08px
+    @media all and ($xs)
+      display: none
   &__content-box
     padding-top: 25px
     padding-bottom: 25px
     &:first-of-type
       padding-top: 50px
+      @media all and ($xs)
+        padding-top: 20px
     &:last-of-type
       padding-bottom: 50px
   &__content-item-box

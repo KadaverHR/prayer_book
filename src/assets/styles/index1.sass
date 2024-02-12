@@ -56,10 +56,14 @@
     @media all and ($xs)
       font-size: 14px
       line-height: 14px
+      padding-bottom: 10px
+      padding-left: 10px
   &__item-img
     display: flex
     max-height: 200px
     justify-content: flex-start
+    @media all and ($mobile)
+      width: 100%
     @media all and (max-width: 420px)
       max-height: 120px
     img

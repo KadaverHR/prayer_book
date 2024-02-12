@@ -4,9 +4,25 @@
     padding-left: 50px
     padding-right: 50px
     grid-template-columns: repeat(3, 1fr)
+    @media all and ($mobile)
+      grid-template-columns: repeat(2, 1fr)
+      gap: 20px
+      padding-left: 0
+      padding-right: 0
+  // .main__item-img img
+  //   @media all and ($xs)
+  //     height: 120px
 
+.needs
+  .main__item:nth-of-type(4n+3), .main__item:nth-of-type(4n)
+    @media all and ($xs)
+      grid-column: 1/3
+      .main__item-img img
+        // max-width: 280px
+        width: 100%
 .texts
   padding-top: 40px
+  display: grid
   .title
     padding-left: 25px
     font-size: 30px
@@ -27,7 +43,24 @@
     font-size: 18px
     font-weight: 400
     line-height: 24px
+    @media all and ($xs)
+      font-size: 16px
+      line-height: 27px
 
-.saint
+.is-main-saint
   .main__list
     padding-top: 52px
+    @media all and ($mobile)
+      justify-content: center
+      justify-items: center
+  .main__item-img
+    @media all and ($mobile)
+      width: fit-content
+  .main__item-img img
+    @media all and ($xs)
+      height: 156px
+      width: fit-content
+  .main__item-link
+    @media all and ($xs)
+      &:hover .main__item-img img, &:focus .main__item-img img, &:active .main__item-img img
+        height: 156px

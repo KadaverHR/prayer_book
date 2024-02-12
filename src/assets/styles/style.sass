@@ -67,6 +67,9 @@ img
 main
   padding-top: 120px
   padding-bottom: 130px
+  @media all and ($xs)
+    padding-top: 65px
+    padding-bottom: 100px
 
 .d-n
   display: none !important
@@ -98,6 +101,8 @@ main
     flex-wrap: wrap
     justify-content: start
     order: -1
+    @media all and ($xs)
+      display: none
     & > label
       margin-right: 20px
       margin-bottom: 20px
@@ -117,7 +122,6 @@ main
       text-transform: uppercase
       transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out
     & > input[type="radio"]:checked + label
-      // color: #fff
       background: #D8DCBF
       cursor: default
   &__content-text
@@ -128,6 +132,9 @@ main
     font-weight: 400
     line-height: 33px
     letter-spacing: -0.63px
+    @media all and ($xs)
+      font-size: 16px
+      line-height: 27px
 #content-1:has(~ .tab__nav > #tab-btn-1:checked),
 #content-2:has(~ .tab__nav > #tab-btn-2:checked),
 #content-3:has(~ .tab__nav > #tab-btn-3:checked),
