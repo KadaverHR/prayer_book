@@ -1,11 +1,20 @@
 .modals-kid
   background: #fff
-  border-radius: 30px 30px 40px 40px
+  border-radius: 30px 30px 40px 40px !important
   display: grid
   padding: 10px
   grid-template-columns: 1fr auto
   gap: 20px
   justify-content: space-between
+  @media all and ($mobile)
+    grid-template-columns: 1fr
+    padding: 0
+  &__box
+    @media all and ($xs)
+      background: #fff
+      border-radius: 30px 30px 40px 40px !important
+      height: fit-content
+      padding: 30px 20px 40px 30px
   &__title-wrapper
     display: grid
     grid-auto-flow: column
@@ -13,6 +22,9 @@
     padding-left: 21px
     padding-bottom: 30px
     padding-right: 10px
+    @media all and ($xs)
+      padding-bottom: 0
+      padding-left: 0
   &__title
     font-family: $OS
     font-size: 24px
@@ -21,11 +33,15 @@
     letter-spacing: -0.03em
     text-transform: uppercase
     color: #9B2828
+    @media all and ($xs)
+      font-size: 21px
 
   &__list
     display: grid
     gap: 11px
     padding: 33px 41px
+    @media all and ($xs)
+      padding: 15px 0 0 0
   &__link
     font-family: $OS
     font-size: 16px
@@ -35,11 +51,14 @@
     text-transform: uppercase
     color: #838769
     text-decoration: none
+    @media all and ($xs)
+      font-size: 14px
   &__img
     min-width: 216px
     border-radius: 30px 30px 40px 40px
     height: 100%
-
+    @media all and ($mobile)
+      display: none
 .modals-all
   height: 100vh
   background: rgba(79, 76, 87, 0.8)
@@ -64,8 +83,10 @@
   &__content-box
     border-radius: 20px 20px 0 0
     background: #fff
-    padding: 40px 90px
+    padding: 40px 40px 40px 90px
     margin-top: -20px
+    @media all and ($xs)
+      padding: 40px
   &__content-title
     font-family: $Ph
     font-size: 24px
@@ -79,11 +100,16 @@
     height: 100%
     overflow: hidden
     display: grid
-    justify-content: center
-    justify-items: center
+    justify-content: stretch
+    justify-items: stretch
+    margin-right: 50px
+    @media all and ($xs)
+      margin-right: 0
   &__content-item
     padding: 21px 5px 6px 5px
     position: relative
+    display: grid
+    justify-content: center
     &::before
       content: ""
       width: 100%
@@ -112,6 +138,9 @@
     &::-webkit-scrollbar-thumb
       background-color: #AF8A05
       border: 1px solid #AF8A05
+    @media all and ($xs)
+      max-height: 100%
+
   &__btn-box
     background: #F8F5EF
     width: 100%
@@ -128,6 +157,9 @@
     font-weight: 700
     line-height: 21px
     text-transform: uppercase
+    @media all and ($xs)
+      padding: 10px
+      width: 100%
   &__footer
     display: grid !important
     position: absolute
@@ -142,6 +174,9 @@
   background: #fff
   border-radius: 20px 20px 0 0
   position: relative
+  @media all and ($xs)
+    padding: 24px 20px
+    border-radius: 0
   &__title
     font-family: $Ph
     font-size: 30px
@@ -181,6 +216,10 @@
     text-align: center
     color: #82898F
     padding-top: 20px
+    padding-bottom: 40px
+    @media all and ($xs)
+      font-size: 12px
+
   &__inputs
     display: grid
     grid-template-columns: repeat(4, 1fr)
@@ -193,11 +232,11 @@
         grid-column: 4/5
   .modals__close
     right: -60px
+    @media all and ($xs)
+      display: none
     &.prev
       left: -60px
       right: auto
-
-
 
 .checkbox
   &__item

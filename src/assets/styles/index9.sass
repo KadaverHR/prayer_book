@@ -37,6 +37,8 @@
 .profile
   .title
     padding-left: 20px
+    @media all and ($xs)
+      padding-left: 0
   &__setting-box
     padding-left: 50px
     padding-right: 50px
@@ -45,6 +47,10 @@
     gap: 30px
     justify-content: space-between
     padding-top: 50px
+    @media all and ($mobile)
+      grid-template-columns: 1fr
+      padding-left: 0
+      padding-right: 0
   &__setting-title
     font-family: $Ph
     font-size: 24px
@@ -57,14 +63,22 @@
     min-height: 136px
     align-content: space-around
     margin-left: 10px
+    @media all and ($xs)
+      margin-left: 0
+      min-height: 0
+      gap: 20px
   &__setting-block
     display: grid
     gap: 20px
     align-content: space-between
     &:last-of-type
       justify-self: end
+      @media all and ($mobile)
+        justify-self: stretch
     &:first-of-type
       justify-self: start
+      @media all and ($mobile)
+        justify-self: stretch
   &__setting-text
     font-family: $OS
     font-size: 18px
@@ -121,7 +135,13 @@
     margin-top: 70px
     .profile__form
       margin-left: 50px
+      @media all and ($xs)
+        margin-left: 0
     .profile__setting-btn
       margin: 0 auto
       display: grid
       margin-top: 40px
+
+.holidays, .profile
+  @media all and ($xs)
+    padding-top: 25px

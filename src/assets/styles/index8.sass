@@ -1,4 +1,9 @@
 .every-day
+	@media all and ($xs)
+		padding-top: 20px
+	.header__mobile-btn
+		@media all and ($xs)
+			margin-top: 0
 	.container
 		position: relative
 	&__box
@@ -10,6 +15,10 @@
 			margin-right: 0
 	.tab__nav
 		justify-content: space-between
+		@media all and ($mobile)
+			justify-content: flex-start
+		@media all and ($xs)
+			display: none
 	.tab__content
 		margin-top: 30px
 	&__tab-title
@@ -20,10 +29,12 @@
 		letter-spacing: -0.03em
 		color: #7F845F
 		text-align: center
+		@media all and ($xs)
+			display: none
 	&__tab-text-box
 		display: grid
 		gap: 33px
-		max-width: 559px
+		max-width: 550px
 	&__tab-item-title
 		font-family: $TNR
 		font-size: 24px
@@ -61,3 +72,5 @@
 		justify-items: end
 		margin-top: 125px
 		padding-right: 50px
+		@media all and ($mobile)
+			display: none
