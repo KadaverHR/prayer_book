@@ -104,15 +104,36 @@ $(document).ready(function () {
 
   /// кнопка подробнее
 
-  let btnMore = document.querySelector('.player__btn-more')
-  let tbh = document.querySelector('.player__hidden')
+  if (document.querySelector('.player__btn-more')) {
 
-  btnMore.addEventListener('click', () => {
-    btnMore.classList.add('d-n')
-    tbh.classList.remove('d-n')
-  })
+    let btnMore = document.querySelector('.player__btn-more')
+    let tbh = document.querySelector('.player__hidden')
+
+    btnMore.addEventListener('click', () => {
+      btnMore.classList.add('d-n')
+      tbh.classList.remove('d-n')
+    })
 
 
+  }
 
-  
+
+  const validation = new JustValidate('#pay-form', {
+    validateBeforeSubmitting: true,
+    focusInvalidField: true,
+    lockForm: true,
+  });
+
+  validation
+    .addField('#mail_input', [
+      {
+        rule: 'required',
+        errorMessage: 'Введите адрес электронной почты',
+      },
+      {
+        rule: 'email',
+        errorMessage: 'Неправильно введен адрес электронной почты',
+      },
+    ])
+
 });

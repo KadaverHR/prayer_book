@@ -17,11 +17,15 @@
       ОПЛАТА ЗАПИСКИ
     </p>
 
-    <form class="modals-payment__form" action="">
-      <p class="modals-payment__title-block">
-        Ваши контактные данные
-      </p>
-      <input id="mail" class="profile__password" type="mail" placeholder="Введите email">
+    <form class="modals-payment__form" id="pay-form" action="">
+      <label for="mail_input">
+        <p class=" modals-payment__title-block">
+          Ваши контактные данные
+        </p>
+
+
+        <input id="mail_input" class="profile__password" type="mail" placeholder="Введите email">
+      </label>
       <p class="modals-payment__desc">
         Чтобы получать уведомления о движении
         ваших записок - введите имя и адрес эл. почты
@@ -33,9 +37,9 @@
       <input id="card" class="profile__password" type="number" placeholder="Номер карты">
 
       <div class="modals-payment__inputs">
-        <input id="month" class="profile__password" type="number" placeholder="месяц">
-        <input id="year" class="profile__password" type="number" placeholder="год">
-        <input id="CVV" class="profile__password" type="number" placeholder="CVV">
+        <input id="month" class="profile__password" maxlength="2" type="number" placeholder="месяц">
+        <input id="year" class="profile__password" maxlength="2" type="number" placeholder="год">
+        <input id="CVV" class="profile__password" maxlength="3" type="password" placeholder="CVV">
       </div>
 
       <div class="checkbox__item">
@@ -50,7 +54,7 @@
       </div>
       <div class="checkbox__item">
         <label for="check2">
-          <input class="checkbox__input" type="checkbox" name="check2" id="check1">
+          <input class="checkbox__input" type="checkbox" name="check2" id="check2">
           <span class="checkbox__custom"></span>
           <span class="checkbox__text">
             Я соглашаюсь получать рассылку
@@ -63,6 +67,9 @@
     </form>
   </div>
   <div class="modals__btn-box">
+    <p class="modals__btn-price">
+      1500 <span>P</span>
+    </p>
     <button type="submit" class="modals__btn">
       Оплатить
     </button>
