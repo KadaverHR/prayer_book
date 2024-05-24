@@ -17,9 +17,11 @@
         День памяти <br>
         Спиридона Тримифунтского
       </h1>
-      <button class="button banner__btn">
+      <button id="btnOrderPrayer" class="button banner__btn">
         заказать молебен
       </button>
+
+
     </div>
   </div>
 </section>
@@ -96,7 +98,7 @@
 
         <div class="swiper-slide">
           <div class="swiper-slide-box">
-            <a href="" class="main__item-link">
+            <div class="card-modal main__item-link">
               <p class="main__item-title">
                 Молитвы <br>
                 о здоровье
@@ -105,9 +107,9 @@
                 <img src="assets/img/img5.jpg" alt="Утренние
               молитвы">
               </div>
-            </a>
+            </div>
 
-            <a href="" class="main__item-link">
+            <div class="card-modal main__item-link">
               <p class="main__item-title">
                 Молитвы <br>
                 о семье
@@ -116,12 +118,12 @@
                 <img src="assets/img/img6.jpg" alt="Утренние
               молитвы">
               </div>
-            </a>
+            </div>
           </div>
         </div>
 
         <div class="swiper-slide">
-          <a href="" class="main__item-link main__item-link--big">
+          <div class="card-modal main__item-link main__item-link--big">
             <p class="main__item-title">
               Молитвы <br>
               о детях
@@ -130,10 +132,10 @@
               <img src="assets/img/img7.jpg" alt="Утренние
               молитвы">
             </div>
-          </a>
+          </div>
         </div>
         <div class="swiper-slide">
-          <a href="" class="main__item-link">
+          <div class="card-modal main__item-link">
             <p class="main__item-title">
               Утренние <br>
               молитвы
@@ -142,7 +144,7 @@
               <img src="assets/img/img1.jpg" alt="Утренние
               молитвы">
             </div>
-          </a>
+          </div>
         </div>
 
       </div>
@@ -259,5 +261,78 @@
 
 </section>
 
+<div class="fade modal-backdrop"></div>
 
+
+<!-- Модалка -->
+<div id="orderPrayer" class="modals-box">
+  <div class="modals__box">
+    
+  
+    <div class="modals__content-box">
+      <button id="modalsClose" class="modals__close modals__img-box ">
+        <img src="assets/img/close2.svg">
+      </button>
+      <p class="modals__content-title">
+        Молебен к МАТРОНЕ
+        МОСКОВСКОЙ
+      </p>
+      <div class="modals__scroll">
+        <ul class="modals__content-list">
+  
+  
+          <li class="modals__content-item">
+            <input id="modals-input-name" class="profile__password modals-input-red" type="text"
+              placeholder="Добавить имя">
+          </li>
+          <label for="modals-input-name" class="modals-input-red__span">Имя пишется в Родительном падеже</label>
+        </ul>
+      </div>
+    </div>
+    <div class="modals__btn-box">
+      <p class="modals__btn-price">
+        0 <span>P</span>
+      </p>
+      <button disabled type="submit" class="modals__btn">
+        ПЕРЕЙТИ К ОПЛАТЕ
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Модалка о детях -->
+
+<div id="modalCard" class="modals-kid__box">
+  <div class="modals-kid__title-wrapper">
+    <h2 class="modals-kid__title modals-kid__title">
+      Молитвы о детях
+    </h2>
+    <button class="modals-kid__close">
+      <img src="assets/img/close.svg">
+    </button>
+  </div>
+  <div class="modals-kid">
+    <div class="modals-kid__list">
+      <a href="" class="modals-kid__link">
+        О даровании детей
+      </a>
+      <a href="" class="modals-kid__link">
+        О ЗДОРОВЬЕ ДЕТЕЙ
+      </a>
+      <a href="" class="modals-kid__link">
+        О БЛАГОПОЛУЧИИ ДЕТЕЙ
+      </a>
+      <a href="" class="modals-kid__link">
+        Об успехах в учебе
+      </a>
+    </div>
+    <img class="modals-kid__img" src="assets/img/img7-min.jpeg" alt="">
+  </div>
+
+
+</div>
+
+
+
+<!--  -->
 {% endblock %}

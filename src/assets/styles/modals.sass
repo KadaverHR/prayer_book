@@ -1,19 +1,23 @@
 .modals-kid
-  background: #fff
-  border-radius: 30px 30px 40px 40px !important
+  min-width: 550px
+  // background: #fff
+  // border-radius: 30px 30px 40px 40px !important
   display: grid
-  padding: 10px
+  // padding: 10px
   grid-template-columns: 1fr auto
   gap: 20px
   justify-content: space-between
-  @media all and ($mobile)
+  @media all and ($xs)
+    min-width: 280px
     grid-template-columns: 1fr
     padding: 0
   &__box
+    // @media all and ($xs)
+    background: #fff
+    border-radius: 30px 30px 40px 40px !important
+    height: fit-content
+    padding: 30px 10px 10px 10px
     @media all and ($xs)
-      background: #fff
-      border-radius: 30px 30px 40px 40px !important
-      height: fit-content
       padding: 30px 20px 40px 30px
   &__title-wrapper
     display: grid
@@ -39,7 +43,7 @@
   &__list
     display: grid
     gap: 11px
-    padding: 33px 41px
+    padding: 20px
     @media all and ($xs)
       padding: 15px 0 0 0
   &__link
@@ -57,7 +61,7 @@
     min-width: 216px
     border-radius: 30px 30px 40px 40px
     height: 100%
-    @media all and ($mobile)
+    @media all and ($xs)
       display: none
 .modals-all
   height: 100vh
@@ -72,7 +76,7 @@
   background: #fff
   border-radius: 20px
   display: grid
-  
+
   &__box
     display: grid
     justify-content: center
@@ -87,7 +91,7 @@
     border-radius: 20px 20px 0 0
     background: #fff
     padding: 90px 40px 40px 90px
-    margin-top: -20px
+    // margin-top: -20px
     min-height: 560px
     @media all and ($xs)
       padding: 40px
@@ -150,11 +154,12 @@
   &__btn-box
     background: #F8F5EF
     width: 100%
-    padding: 30px 40px
+    padding: 30px 40px 50px 40px
     display: grid
     gap: 10px
     align-items: center
     grid-auto-flow: column
+    border-radius: 0 0 20px 20px
   &__btn-price
     font-family: $Pt
     font-weight: 700
@@ -177,7 +182,7 @@
     &:disabled
       color: #B5AB97
       background: #E2DAC9
-      
+
   &__footer
     display: grid !important
     position: absolute
@@ -216,7 +221,7 @@
       letter-spacing: 0%
       text-align: center
       color: #515961
-    label 
+    label
       display: grid
   &__title-block
     font-family: $Ph
@@ -333,3 +338,52 @@
     font-weight: 400
     line-height: 19px
     color: #AD8B86
+
+.modals-box
+  justify-content: center
+  width: 100%
+  display: flex
+  position: fixed
+  z-index: 1051
+  overflow: hidden
+  bottom: -100%
+  transition: bottom $anim
+  &.show
+    bottom: 100px
+
+.modal-backdrop
+  background-color: #000
+  height: 100vh
+  left: 0
+  position: fixed
+  top: 0
+  width: 100vw
+  z-index: 1050
+  opacity: 0
+  pointer-events: none
+
+.modal-backdrop.show
+  background-color: #56676b
+  opacity: .85
+  pointer-events: auto
+
+.body.modal
+  .footer
+    z-index: 1055
+  .linear-gradient__bottom
+    display: none
+  .footer__bg, .footer__bottom
+    background: transparent
+  .footer__bottom-text
+    color: #FEFFF9
+
+.modals-kid__box
+  position: fixed
+  z-index: 1051
+  overflow: hidden
+  bottom: -100%
+  left: 50%
+  transform: translateX(-50%)
+  transition: bottom $anim
+  &.show
+    bottom: 50%

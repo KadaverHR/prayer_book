@@ -118,22 +118,76 @@ $(document).ready(function () {
   }
 
 
-  const validation = new JustValidate('#pay-form', {
-    validateBeforeSubmitting: true,
-    focusInvalidField: true,
-    lockForm: true,
-  });
+  // const validation = new JustValidate('#pay-form', {
+  //   validateBeforeSubmitting: true,
+  //   focusInvalidField: true,
+  //   lockForm: true,
+  // });
 
-  validation
-    .addField('#mail_input', [
-      {
-        rule: 'required',
-        errorMessage: 'Введите адрес электронной почты',
-      },
-      {
-        rule: 'email',
-        errorMessage: 'Неправильно введен адрес электронной почты',
-      },
-    ])
+  // validation
+  //   .addField('#mail_input', [
+  //     {
+  //       rule: 'required',
+  //       errorMessage: 'Введите адрес электронной почты',
+  //     },
+  //     {
+  //       rule: 'email',
+  //       errorMessage: 'Неправильно введен адрес электронной почты',
+  //     },
+  //   ])
+
+
+
+  // модалки
+
+
+  // 1
+  let modalClose = document.getElementById('modalsClose')
+
+  let btnOrderPrayer = document.getElementById('btnOrderPrayer')
+  let orderPrayer = document.getElementById('orderPrayer')
+  let modalBbackdrop = document.querySelector('.modal-backdrop')
+  let bodyModal = document.querySelector('body')
+
+
+  btnOrderPrayer.addEventListener('click', () => {
+    modalBbackdrop.classList.add('show')
+    orderPrayer.classList.add('show')
+    bodyModal.classList.add('modal')
+
+  })
+
+  modalClose.addEventListener('click', () => {
+    modalBbackdrop.classList.remove('show')
+    orderPrayer.classList.remove('show')
+    bodyModal.classList.remove('modal')
+  })
+
+  // 2
+
+  let modalsCardLink = document.querySelectorAll('.card-modal')
+
+  let modalCard = document.getElementById('modalCard')
+  let modalCardClose = document.querySelector('.modals-kid__close')
+
+  modalsCardLink.forEach(element => {
+    element.addEventListener('click', () => {
+      modalBbackdrop.classList.add('show')
+      modalCard.classList.add('show')
+    });
+  })
+
+  modalCardClose.addEventListener('click', () => {
+    modalBbackdrop.classList.remove('show')
+    modalCard.classList.remove('show')
+  })
+
+
+
 
 });
+
+
+
+
+
