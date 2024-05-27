@@ -337,68 +337,71 @@
 <!-- модалка оплаты -->
 
 <div id="payModal" class="modals-box">
+
   <div class="modals__box modals-payment__box">
-
-
-    <div class="modals-payment">
       <button id="payModalClose" class="modals__close">
         <img src="assets/img/close3.svg">
       </button>
       <button id="prevModal" class="modals__close prev">
         <img src="assets/img/prev.svg">
       </button>
-      <p class="modals-payment__title">
-        ОПЛАТА ЗАПИСКИ
-      </p>
 
-      <form class="modals-payment__form" id="pay-form" action="">
-        <label for="mail_input">
-          <p class=" modals-payment__title-block">
-            Ваши контактные данные
+    <div class="modals-payment scroll">
+
+      <div class="scroll2">
+        <p class="modals-payment__title">
+          ОПЛАТА ЗАПИСКИ
+        </p>
+
+        <form class="modals-payment__form" id="pay-form" action="">
+          <label for="mail_input">
+            <p class=" modals-payment__title-block">
+              Ваши контактные данные
+            </p>
+
+
+            <input id="mail_input" class="profile__password" type="mail" placeholder="Введите email">
+          </label>
+          <p class="modals-payment__desc">
+            Чтобы получать уведомления о движении
+            ваших записок - введите имя и адрес эл. почты
           </p>
 
+          <p class="modals-payment__title-block">
+            Данные карты
+          </p>
+          <input id="card" maxlength="19" class="profile__password" type="text" placeholder="Номер карты">
 
-          <input id="mail_input" class="profile__password" type="mail" placeholder="Введите email">
-        </label>
-        <p class="modals-payment__desc">
-          Чтобы получать уведомления о движении
-          ваших записок - введите имя и адрес эл. почты
-        </p>
+          <div class="modals-payment__inputs">
+            <input id="month" class="profile__password" maxlength="2" type="text" placeholder="месяц">
+            <input id="year" class="profile__password" maxlength="2" type="text" placeholder="год">
+            <input id="CVV" class="profile__password" maxlength="3" type="password" placeholder="CVV">
+          </div>
 
-        <p class="modals-payment__title-block">
-          Данные карты
-        </p>
-        <input id="card" maxlength="19" class="profile__password" type="text" placeholder="Номер карты">
+          <div class="checkbox__item">
+            <label for="check1">
+              <input class="checkbox__input" type="checkbox" name="check1" id="check1">
+              <span class="checkbox__custom"></span>
+              <span class="checkbox__text">
+                Я согласен на обработку персональных
+                данных и с условиями
+              </span>
+            </label>
+          </div>
+          <div class="checkbox__item">
+            <label for="check2">
+              <input class="checkbox__input" type="checkbox" name="check2" id="check2">
+              <span class="checkbox__custom"></span>
+              <span class="checkbox__text">
+                Я соглашаюсь получать рассылку
+                о новостях, праздниках и акциях
+                на свой e-mail
+              </span>
+            </label>
+          </div>
 
-        <div class="modals-payment__inputs">
-          <input id="month" class="profile__password" maxlength="2" type="text" placeholder="месяц">
-          <input id="year" class="profile__password" maxlength="2" type="text" placeholder="год">
-          <input id="CVV" class="profile__password" maxlength="3" type="password" placeholder="CVV">
-        </div>
-
-        <div class="checkbox__item">
-          <label for="check1">
-            <input class="checkbox__input" type="checkbox" name="check1" id="check1">
-            <span class="checkbox__custom"></span>
-            <span class="checkbox__text">
-              Я согласен на обработку персональных
-              данных и с условиями
-            </span>
-          </label>
-        </div>
-        <div class="checkbox__item">
-          <label for="check2">
-            <input class="checkbox__input" type="checkbox" name="check2" id="check2">
-            <span class="checkbox__custom"></span>
-            <span class="checkbox__text">
-              Я соглашаюсь получать рассылку
-              о новостях, праздниках и акциях
-              на свой e-mail
-            </span>
-          </label>
-        </div>
-
-      </form>
+        </form>
+      </div>
     </div>
     <div class="modals__btn-box">
       <p class="modals__btn-price">
@@ -410,6 +413,7 @@
     </div>
 
   </div>
+
 </div>
 
 <!--  -->

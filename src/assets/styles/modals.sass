@@ -81,6 +81,19 @@
     display: grid
     justify-content: center
     position: relative
+    .scroll
+      overflow-y: auto
+      &::-webkit-scrollbar
+        
+        width: 4px
+      &::-webkit-scrollbar-track
+        margin-top: 10px
+        background: #F2D9D9
+      &::-webkit-scrollbar-thumb
+        background-color: #9B2828
+        border: 1px solid #9B2828
+    &.modals-payment__box
+      max-height: calc(100vh - 136px)
   &__img-box
     position: relative
   &__img
@@ -92,7 +105,7 @@
     background: #fff
     padding: 90px 40px 40px 90px
     // margin-top: -20px
-    min-height: 560px
+    min-height: 290px
     @media all and ($xs)
       padding: 40px
   &__content-title
@@ -200,6 +213,15 @@
   @media all and ($xs)
     padding: 24px 20px
     border-radius: 0
+  &__box
+    .modals__close
+      right: -60px
+      &.prev
+        left: -60px
+        right: auto
+    @media all and ($xs)
+      display: none
+
   &__title
     font-family: $Ph
     font-size: 30px
@@ -255,13 +277,6 @@
       max-width: 60px
       &:last-of-type
         grid-column: 4/5
-  .modals__close
-    right: -60px
-    @media all and ($xs)
-      display: none
-    &.prev
-      left: -60px
-      right: auto
 
 .checkbox
   &__item
@@ -347,9 +362,11 @@
   z-index: 1051
   overflow: hidden
   bottom: -100%
-  transition: bottom $anim
+  transition: bottom $anim, opacity $anim
+  opacity: 0
   &.show
     bottom: 100px
+    opacity: 1
 
 .modal-backdrop
   background-color: #000
@@ -383,7 +400,9 @@
   overflow: hidden
   bottom: -100%
   left: 50%
+  opacity: 0
   transform: translateX(-50%)
-  transition: bottom $anim
+  transition: bottom $anim, opacity $anim
   &.show
     bottom: 50%
+    opacity: 1
