@@ -116,27 +116,34 @@ $(document).ready(function () {
 
 
   }
+  // валидация
+
+  $("#card").mask("9999-9999-9999-9999");
+  $("#month").mask("99");
+  $("#year").mask("99");
 
 
-  // const validation = new JustValidate('#pay-form', {
-  //   validateBeforeSubmitting: true,
-  //   focusInvalidField: true,
-  //   lockForm: true,
-  // });
+  if (document.querySelector("#pay-form")) {
+    const validation = new JustValidate('#pay-form', {
+      validateBeforeSubmitting: true,
+      focusInvalidField: true,
+      lockForm: true,
+    });
 
-  // validation
-  //   .addField('#mail_input', [
-  //     {
-  //       rule: 'required',
-  //       errorMessage: 'Введите адрес электронной почты',
-  //     },
-  //     {
-  //       rule: 'email',
-  //       errorMessage: 'Неправильно введен адрес электронной почты',
-  //     },
-  //   ])
+    validation
+      .addField('#mail_input', [
+        {
+          rule: 'required',
+          errorMessage: 'Введите адрес электронной почты',
+        },
+        {
+          rule: 'email',
+          errorMessage: 'Неправильно введен адрес электронной почты',
+        },
 
+      ])
 
+  }
 
   // модалки
 
@@ -149,20 +156,21 @@ $(document).ready(function () {
   let modalBbackdrop = document.querySelector('.modal-backdrop')
   let bodyModal = document.querySelector('body')
 
+  if (btnOrderPrayer != null) {
+    btnOrderPrayer.addEventListener('click', () => {
+      modalBbackdrop.classList.add('show')
+      orderPrayer.classList.add('show')
+      bodyModal.classList.add('modal')
 
-  btnOrderPrayer.addEventListener('click', () => {
-    modalBbackdrop.classList.add('show')
-    orderPrayer.classList.add('show')
-    bodyModal.classList.add('modal')
-
-  })
-
-  modalClose.addEventListener('click', () => {
-    modalBbackdrop.classList.remove('show')
-    orderPrayer.classList.remove('show')
-    bodyModal.classList.remove('modal')
-  })
-
+    })
+  }
+  if (modalClose != null) {
+    modalClose.addEventListener('click', () => {
+      modalBbackdrop.classList.remove('show')
+      orderPrayer.classList.remove('show')
+      bodyModal.classList.remove('modal')
+    })
+  }
   // 2
 
   let modalsCardLink = document.querySelectorAll('.card-modal')
@@ -170,22 +178,86 @@ $(document).ready(function () {
   let modalCard = document.getElementById('modalCard')
   let modalCardClose = document.querySelector('.modals-kid__close')
 
-  modalsCardLink.forEach(element => {
-    element.addEventListener('click', () => {
-      modalBbackdrop.classList.add('show')
-      modalCard.classList.add('show')
-    });
-  })
 
-  modalCardClose.addEventListener('click', () => {
-    modalBbackdrop.classList.remove('show')
-    modalCard.classList.remove('show')
-  })
+  if (modalsCardLink != null) {
+
+    modalsCardLink.forEach(element => {
+      element.addEventListener('click', () => {
+        modalBbackdrop.classList.add('show')
+        modalCard.classList.add('show')
+      });
+    })
+  }
+
+  if (modalCardClose != null) {
+
+    modalCardClose.addEventListener('click', () => {
+      modalBbackdrop.classList.remove('show')
+      modalCard.classList.remove('show')
+    })
+
+  }
 
 
+  //добавление имени 
 
+  let inputName = document.getElementById('modals-input-name')
+  let listName = document.querySelector('.modals__content-list')
+  let payBtn = document.querySelector('.modals__btn')
+
+  if (inputName != null) {
+    inputName.addEventListener("keyup", function (event) {
+      if (event.key === "Enter") {
+
+        let valueInputName = inputName.value
+        let itemList = document.createElement('li')
+        itemList.classList.add('modals__content-item')
+        // listName.insertBefore(itemList, listName.childNodes[1]);
+        listName.prepend(itemList)
+
+        let textItemList = document.createElement('p')
+        textItemList.classList.add('modals__content-link')
+        textItemList.textContent = valueInputName
+        itemList.appendChild(textItemList)
+
+        inputName.value = ""
+
+        payBtn.disabled = false
+      }
+    })
+
+  }
+
+
+  // модалка оплаты
+
+  let payModal = document.getElementById('payModal')
+  let payModalClose = document.getElementById('payModalClose')
+  let prevModal = document.getElementById('prevModal')
+
+  if (payBtn != null) {
+    payBtn.addEventListener('click', () => {
+
+      payModal.classList.add('show')
+      orderPrayer.classList.remove('show')
+    })
+
+    payModalClose.addEventListener('click', () => {
+      modalBbackdrop.classList.remove('show')
+      payModal.classList.remove('show')
+      bodyModal.classList.remove('modal')
+    })
+
+    prevModal.addEventListener('click', () => {
+      payModal.classList.remove('show')
+      orderPrayer.classList.add('show')
+    })
+
+  }
 
 });
+
+
 
 
 
