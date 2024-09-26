@@ -33,24 +33,29 @@ $(document).ready(function () {
       prevEl: ".swiper-main-big__swiper-button-prev",
     },
     spaceBetween: 8,
+
     breakpoints: {
       0: {
         slidesPerView: 1,
         grid: {
-          rows: 2,
+          rows: 3,
         },
       },
       576: {
         slidesPerView: 1,
+        slidesPerGroup: 1,
       },
       768: {
         slidesPerView: 2,
+        slidesPerGroup: 2,
       },
       891: {
         slidesPerView: 2,
+        slidesPerGroup: 2,
       },
       1920: {
         slidesPerView: 2,
+        slidesPerGroup: 2,
       },
     },
   });
@@ -254,6 +259,48 @@ $(document).ready(function () {
     })
 
   }
+
+
+  //выпадающий список моб меню 
+
+  let listMobMenu = document.querySelector('.header__mobile-btn-box')
+  let btnMobMenu = document.querySelector('.header__mobile-btn')
+  let everyDayBtn = document.querySelector('.every-day__mobile-btn')
+  let everyDayList = document.querySelector('.every-day__mobile-btn-box')
+  let textsBtn = document.querySelector('.texts__mobile-btn')
+  let textsList = document.querySelector('.texts__mobile-btn-box')
+  let holidaysBtn = document.querySelector('.holidays__mobile-btn')
+  let holidaysList = document.querySelector('.holidays__mobile-btn-box')
+
+  function mobMenu(list, btn) {
+
+    if (btn) {
+
+      btn.addEventListener('click', () => {
+        event.preventDefault()
+        list.classList.toggle('d-n')
+        btn.classList.toggle('active')
+
+      }
+      )
+    }
+  }
+
+  mobMenu(listMobMenu, btnMobMenu);
+  mobMenu(everyDayList, everyDayBtn);
+  mobMenu(textsList, textsBtn);
+  mobMenu(holidaysList, holidaysBtn);
+
+
+  // if (btnMobMenu) {
+
+  //   btnMobMenu.addEventListener('click', () => {
+  //     event.preventDefault()
+  //     listMobMenu.classList.toggle('d-n')
+  //     btnMobMenu.classList.toggle('active')
+
+  //   }
+  //   )
 
 });
 

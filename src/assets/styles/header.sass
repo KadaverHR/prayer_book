@@ -108,6 +108,10 @@
       letter-spacing: -0.03em
       color: #7F845F
       display: block
+      img 
+        transition: transform $anim
+      &.active img 
+        transform: rotate(-180deg)
     &__mobile-btn-box
       padding: 30px 40px
       background: #D8DCBF

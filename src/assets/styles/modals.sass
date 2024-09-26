@@ -84,7 +84,7 @@
     .scroll
       overflow-y: auto
       &::-webkit-scrollbar
-        
+
         width: 4px
       &::-webkit-scrollbar-track
         margin-top: 10px
@@ -103,11 +103,12 @@
     position: relative
     border-radius: 20px 20px 0 0
     background: #fff
-    padding: 90px 40px 40px 90px
+    padding: 90px 40px 40px 40px
     // margin-top: -20px
     min-height: 290px
     @media all and ($xs)
       padding: 40px
+      padding-top: 60px
   &__content-title
     font-family: $Ph
     font-size: 24px
@@ -118,7 +119,6 @@
     text-align: center
     text-transform: uppercase
     position: relative
-    left: -25px
   &__content-list
     height: 100%
     overflow: hidden
@@ -126,8 +126,10 @@
     justify-content: stretch
     justify-items: stretch
     margin-right: 50px
+    margin-left: 50px
     @media all and ($xs)
-      margin-right: 0
+      margin-right: 20px
+      margin-left: 20px
   &__content-item
     padding: 21px 5px 6px 5px
     position: relative
@@ -162,7 +164,7 @@
       background-color: #9B2828
       border: 1px solid #9B2828
     @media all and ($xs)
-      max-height: 100%
+      max-height: 260px
 
   &__btn-box
     background: #F8F5EF
@@ -204,7 +206,24 @@
     position: absolute
     right: 20px
     top: 20px
+    @media all and ($xs)
+      & svg circle
+        fill: transparent
+      & svg path
+        fill: #9B2828
+        stroke: #9B2828
+.scroll2
+  display: grid
 
+@media all and ($xs)
+  #payModalClose
+    right: 10px
+    z-index: 999
+  #prevModal
+    left: 10px
+    z-index: 999
+    & svg path 
+      fill: none
 .modals-payment
   padding: 24px 50px
   background: #fff
@@ -212,16 +231,13 @@
   position: relative
   @media all and ($xs)
     padding: 24px 20px
-    border-radius: 0
+    border-radius: 15px 15px 0 0
   &__box
     .modals__close
       right: -60px
       &.prev
         left: -60px
         right: auto
-    @media all and ($xs)
-      display: none
-
   &__title
     font-family: $Ph
     font-size: 30px
@@ -231,6 +247,10 @@
     text-align: center
     text-transform: uppercase
     color: #9B2828
+    @media all and ($xs)
+      max-width: 230px
+      justify-self: center
+
   &__form
     max-width: 330px
     margin-top: 40px
