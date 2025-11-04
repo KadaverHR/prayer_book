@@ -14,7 +14,11 @@ $(document).ready(function () {
           $svg = $svg.attr("class", imgClass + " replaced-svg");
         }
         $svg = $svg.removeAttr("xmlns:a");
-        if (!$svg.attr("viewBox") && $svg.attr("height") && $svg.attr("width")) {
+        if (
+          !$svg.attr("viewBox") &&
+          $svg.attr("height") &&
+          $svg.attr("width")
+        ) {
           $svg.attr(
             "viewBox",
             "0 0 " + $svg.attr("height") + " " + $svg.attr("width")
@@ -86,40 +90,34 @@ $(document).ready(function () {
   });
 
   // Бургер
-  let burger = document.querySelector('.burger');
-  let menu = document.querySelector('.header__mobile');
-  let menuLinks = menu.querySelectorAll('.header__link');
+  let burger = document.querySelector(".burger");
+  let menu = document.querySelector(".header__mobile");
+  let menuLinks = menu.querySelectorAll(".header__link");
 
-  burger.addEventListener('click', function () {
-    burger.classList.toggle('burger--active');
-    menu.classList.toggle('header__mobile--active');
-    document.body.classList.toggle('stop-scroll');
+  burger.addEventListener("click", function () {
+    burger.classList.toggle("burger--active");
+    menu.classList.toggle("header__mobile--active");
+    document.body.classList.toggle("stop-scroll");
   });
 
   menuLinks.forEach(function (el) {
-    el.addEventListener('click', function () {
-      burger.classList.remove('burger--active');
-      menu.classList.remove('header__mobile--active');
-      document.body.classList.remove('stop-scroll');
+    el.addEventListener("click", function () {
+      burger.classList.remove("burger--active");
+      menu.classList.remove("header__mobile--active");
+      document.body.classList.remove("stop-scroll");
     });
   });
 
-
-
-
   /// кнопка подробнее
 
-  if (document.querySelector('.player__btn-more')) {
+  if (document.querySelector(".player__btn-more")) {
+    let btnMore = document.querySelector(".player__btn-more");
+    let tbh = document.querySelector(".player__hidden");
 
-    let btnMore = document.querySelector('.player__btn-more')
-    let tbh = document.querySelector('.player__hidden')
-
-    btnMore.addEventListener('click', () => {
-      btnMore.classList.add('d-n')
-      tbh.classList.remove('d-n')
-    })
-
-
+    btnMore.addEventListener("click", () => {
+      btnMore.classList.add("d-n");
+      tbh.classList.remove("d-n");
+    });
   }
   // валидация
 
@@ -127,162 +125,141 @@ $(document).ready(function () {
   $("#month").mask("99");
   $("#year").mask("99");
 
-
   if (document.querySelector("#pay-form")) {
-    const validation = new JustValidate('#pay-form', {
+    const validation = new JustValidate("#pay-form", {
       validateBeforeSubmitting: true,
       focusInvalidField: true,
       lockForm: true,
     });
 
-    validation
-      .addField('#mail_input', [
-        {
-          rule: 'required',
-          errorMessage: 'Введите адрес электронной почты',
-        },
-        {
-          rule: 'email',
-          errorMessage: 'Неправильно введен адрес электронной почты',
-        },
-
-      ])
-
+    validation.addField("#mail_input", [
+      {
+        rule: "required",
+        errorMessage: "Введите адрес электронной почты",
+      },
+      {
+        rule: "email",
+        errorMessage: "Неправильно введен адрес электронной почты",
+      },
+    ]);
   }
 
   // модалки
 
-
   // 1
-  let modalClose = document.getElementById('modalsClose')
+  let modalClose = document.getElementById("modalsClose");
 
-  let btnOrderPrayer = document.getElementById('btnOrderPrayer')
-  let orderPrayer = document.getElementById('orderPrayer')
-  let modalBbackdrop = document.querySelector('.modal-backdrop')
-  let bodyModal = document.querySelector('body')
+  let btnOrderPrayer = document.getElementById("btnOrderPrayer");
+  let orderPrayer = document.getElementById("orderPrayer");
+  let modalBbackdrop = document.querySelector(".modal-backdrop");
+  let bodyModal = document.querySelector("body");
 
   if (btnOrderPrayer != null) {
-    btnOrderPrayer.addEventListener('click', () => {
-      modalBbackdrop.classList.add('show')
-      orderPrayer.classList.add('show')
-      bodyModal.classList.add('modal')
-
-    })
+    btnOrderPrayer.addEventListener("click", () => {
+      modalBbackdrop.classList.add("show");
+      orderPrayer.classList.add("show");
+      bodyModal.classList.add("modal");
+    });
   }
   if (modalClose != null) {
-    modalClose.addEventListener('click', () => {
-      modalBbackdrop.classList.remove('show')
-      orderPrayer.classList.remove('show')
-      bodyModal.classList.remove('modal')
-    })
+    modalClose.addEventListener("click", () => {
+      modalBbackdrop.classList.remove("show");
+      orderPrayer.classList.remove("show");
+      bodyModal.classList.remove("modal");
+    });
   }
   // 2
 
-  let modalsCardLink = document.querySelectorAll('.card-modal')
+  let modalsCardLink = document.querySelectorAll(".card-modal");
 
-  let modalCard = document.getElementById('modalCard')
-  let modalCardClose = document.querySelector('.modals-kid__close')
-
+  let modalCard = document.getElementById("modalCard");
+  let modalCardClose = document.querySelector(".modals-kid__close");
 
   if (modalsCardLink != null) {
-
-    modalsCardLink.forEach(element => {
-      element.addEventListener('click', () => {
-        modalBbackdrop.classList.add('show')
-        modalCard.classList.add('show')
+    modalsCardLink.forEach((element) => {
+      element.addEventListener("click", () => {
+        modalBbackdrop.classList.add("show");
+        modalCard.classList.add("show");
       });
-    })
+    });
   }
 
   if (modalCardClose != null) {
-
-    modalCardClose.addEventListener('click', () => {
-      modalBbackdrop.classList.remove('show')
-      modalCard.classList.remove('show')
-    })
-
+    modalCardClose.addEventListener("click", () => {
+      modalBbackdrop.classList.remove("show");
+      modalCard.classList.remove("show");
+    });
   }
 
+  //добавление имени
 
-  //добавление имени 
-
-  let inputName = document.getElementById('modals-input-name')
-  let listName = document.querySelector('.modals__content-list')
-  let payBtn = document.querySelector('.modals__btn')
+  let inputName = document.getElementById("modals-input-name");
+  let listName = document.querySelector(".modals__content-list");
+  let payBtn = document.querySelector(".modals__btn");
 
   if (inputName != null) {
     inputName.addEventListener("keyup", function (event) {
       if (event.key === "Enter") {
-
-        let valueInputName = inputName.value
-        let itemList = document.createElement('li')
-        itemList.classList.add('modals__content-item')
+        let valueInputName = inputName.value;
+        let itemList = document.createElement("li");
+        itemList.classList.add("modals__content-item");
         // listName.insertBefore(itemList, listName.childNodes[1]);
-        listName.prepend(itemList)
+        listName.prepend(itemList);
 
-        let textItemList = document.createElement('p')
-        textItemList.classList.add('modals__content-link')
-        textItemList.textContent = valueInputName
-        itemList.appendChild(textItemList)
+        let textItemList = document.createElement("p");
+        textItemList.classList.add("modals__content-link");
+        textItemList.textContent = valueInputName;
+        itemList.appendChild(textItemList);
 
-        inputName.value = ""
+        inputName.value = "";
 
-        payBtn.disabled = false
+        payBtn.disabled = false;
       }
-    })
-
+    });
   }
-
 
   // модалка оплаты
 
-  let payModal = document.getElementById('payModal')
-  let payModalClose = document.getElementById('payModalClose')
-  let prevModal = document.getElementById('prevModal')
+  let payModal = document.getElementById("payModal");
+  let payModalClose = document.getElementById("payModalClose");
+  let prevModal = document.getElementById("prevModal");
 
   if (payBtn != null) {
-    payBtn.addEventListener('click', () => {
+    payBtn.addEventListener("click", () => {
+      payModal.classList.add("show");
+      orderPrayer.classList.remove("show");
+    });
 
-      payModal.classList.add('show')
-      orderPrayer.classList.remove('show')
-    })
+    payModalClose.addEventListener("click", () => {
+      modalBbackdrop.classList.remove("show");
+      payModal.classList.remove("show");
+      bodyModal.classList.remove("modal");
+    });
 
-    payModalClose.addEventListener('click', () => {
-      modalBbackdrop.classList.remove('show')
-      payModal.classList.remove('show')
-      bodyModal.classList.remove('modal')
-    })
-
-    prevModal.addEventListener('click', () => {
-      payModal.classList.remove('show')
-      orderPrayer.classList.add('show')
-    })
-
+    prevModal.addEventListener("click", () => {
+      payModal.classList.remove("show");
+      orderPrayer.classList.add("show");
+    });
   }
 
+  //выпадающий список моб меню
 
-  //выпадающий список моб меню 
-
-  let listMobMenu = document.querySelector('.header__mobile-btn-box')
-  let btnMobMenu = document.querySelector('.header__mobile-btn')
-  let everyDayBtn = document.querySelector('.every-day__mobile-btn')
-  let everyDayList = document.querySelector('.every-day__mobile-btn-box')
-  let textsBtn = document.querySelector('.texts__mobile-btn')
-  let textsList = document.querySelector('.texts__mobile-btn-box')
-  let holidaysBtn = document.querySelector('.holidays__mobile-btn')
-  let holidaysList = document.querySelector('.holidays__mobile-btn-box')
+  let listMobMenu = document.querySelector(".header__mobile-btn-box");
+  let btnMobMenu = document.querySelector(".header__mobile-btn");
+  let everyDayBtn = document.querySelector(".every-day__mobile-btn");
+  let everyDayList = document.querySelector(".every-day__mobile-btn-box");
+  let textsBtn = document.querySelector(".texts__mobile-btn");
+  let textsList = document.querySelector(".texts__mobile-btn-box");
+  let holidaysBtn = document.querySelector(".holidays__mobile-btn");
+  let holidaysList = document.querySelector(".holidays__mobile-btn-box");
 
   function mobMenu(list, btn) {
-
     if (btn) {
-
-      btn.addEventListener('click', () => {
-        event.preventDefault()
-        list.classList.toggle('d-n')
-        btn.classList.toggle('active')
-
-      }
-      )
+      btn.addEventListener("click", () => {
+        event.preventDefault();
+        list.classList.toggle("d-n");
+        btn.classList.toggle("active");
+      });
     }
   }
 
@@ -290,7 +267,6 @@ $(document).ready(function () {
   mobMenu(everyDayList, everyDayBtn);
   mobMenu(textsList, textsBtn);
   mobMenu(holidaysList, holidaysBtn);
-
 
   // if (btnMobMenu) {
 
@@ -302,11 +278,29 @@ $(document).ready(function () {
   //   }
   //   )
 
+  const modal = document.getElementById("modalOther");
+  const openBtn = document.querySelector(".modal__table-btn");
+  const closeBtn = modal.querySelector(".modal-other__close-btn");
+
+  if (modal) {
+    // открыть модалку
+    openBtn.addEventListener("click", () => {
+      modal.classList.add("active");
+    });
+
+    // закрыть по крестику
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
+
+    // закрыть по клику вне области контейнера
+    modal.addEventListener("click", (e) => {
+      if (
+        e.target === modal ||
+        e.target.classList.contains("modal-other__overlay")
+      ) {
+        modal.classList.remove("active");
+      }
+    });
+  }
 });
-
-
-
-
-
-
-
